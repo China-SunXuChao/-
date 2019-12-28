@@ -1,0 +1,48 @@
+server:
+  port: 56710
+
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/contacts?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      #url: jdbc:mysql://192.168.5.240:3306/kytms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 50000
+    #password: dmcn
+
+operation:
+  openAopLog: true
+  max:
+    batch:
+      insert:
+        num: 1000
+
+
+#
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:com/bdqn/*/mapper/*.xml
