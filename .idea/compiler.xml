@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bdqn-teach-commons" />
         <module name="bdqn-teach-access" />
+        <module name="bdqn-teach-commons" />
       </profile>
     </annotationProcessing>
   </component>
